@@ -2,6 +2,8 @@
 
 Provides short nice links for DevDiv's TFS:
 
+![Screenshot](https://raw.githubusercontent.com/kzu/Linkinator/master/images/screenshot.png)
+
 
 | Original URL | Nice URL|
 | ------------ |-------------|
