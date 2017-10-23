@@ -21,10 +21,8 @@ chrome.runtime.onInstalled.addListener(function() {
 // Called when the user clicks on the page action.
 chrome.pageAction.onClicked.addListener(function(tab) {
     var shortUrl = tab.url.toString();
-    if (shortUrl.includes('https://devdiv.visualstudio.com/DevDiv/XamarinVS/_wiki?pagePath='))
-        shortUrl = 'http://wiki.devdiv.io' + decodeURIComponent(shortUrl.substring(64));
-        if (shortUrl.includes('https://devdiv.visualstudio.com/DevDiv/_wiki?pagePath='))
-        shortUrl = 'http://wiki.devdiv.io' + decodeURIComponent(shortUrl.substring(54));
+    if (shortUrl.includes('_wiki?pagePath='))
+        shortUrl = 'http://wiki.devdiv.io' + decodeURIComponent(shortUrl.substring(shortUrl.indexOf('_wiki?pagePath=') + 15));
     if (shortUrl.includes('https://devdiv.visualstudio.com/DevDiv/_workitems/edit'))
         shortUrl = 'http://work.devdiv.io/' + shortUrl.replace("https://devdiv.visualstudio.com/DevDiv/_workitems/edit/", "");
     
