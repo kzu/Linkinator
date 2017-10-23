@@ -2,7 +2,7 @@
 
 Provides short nice links for DevDiv's TFS:
 
-![Screenshot](https://raw.githubusercontent.com/kzu/Linkinator/master/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/kzu/Linkinator/master/img/screenshot.png)
 
 Examples of supported URLs:
 
@@ -14,4 +14,4 @@ Examples of supported URLs:
 
 Install from the [Chrome WebStore](https://goo.gl/u5ADhC)
 
-[![Chrome WebStore](https://raw.githubusercontent.com/kzu/Linkinator/master/images/webstore.png)](https://goo.gl/u5ADhC)
+[![Chrome WebStore](https://raw.githubusercontent.com/kzu/Linkinator/master/img/webstore.png)](https://goo.gl/u5ADhC)
