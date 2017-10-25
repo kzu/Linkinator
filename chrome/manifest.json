@@ -2,11 +2,17 @@
   "manifest_version": 2,
   "name": "DevDiv Linkinator 2000",
   "author": "Daniel Cazzulino",
-  "version": "0.2",
+  "version": "0.3",
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },  
+  "content_scripts": [
+    {
+      "matches": ["https://devdiv.visualstudio.com/DevDiv/*"],
+      "js": ["jquery-3.2.1.min.js"]
+    }
+  ],  
   "page_action": {
     "default_icon": {                    
       "16": "images/DevDiv16.png",
@@ -17,9 +23,8 @@
     "default_title": "Create a nice short DevDiv link and copy to clipboard!"
   },
   "permissions": [
-    "tabs",    
+    "tabs",
     "declarativeContent",
-    "activeTab",
-    "<all_urls>"
+    "activeTab"
   ]
 }
