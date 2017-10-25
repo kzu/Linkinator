@@ -10,10 +10,12 @@ function copy(text) {
 
 function onClicked(tab) {
   var shortUrl = tab.url.toString();
-  if (shortUrl.includes('_wiki?pagePath='))
-    shortUrl = 'http://wiki.devdiv.io/' + decodeURIComponent(shortUrl.substring(shortUrl.indexOf('_wiki?pagePath=') + 15));
-  if (shortUrl.includes('https://devdiv.visualstudio.com/DevDiv/_workitems/edit'))
-    shortUrl = 'http://work.devdiv.io/' + shortUrl.replace("https://devdiv.visualstudio.com/DevDiv/_workitems/edit/", "");
+  if (shortUrl.includes('https://devdiv.visualstudio.com/')) {
+    if (shortUrl.includes('_wiki?pagePath='))
+      shortUrl = 'http://wiki.devdiv.io/' + decodeURIComponent(shortUrl.substring(shortUrl.indexOf('_wiki?pagePath=') + 15));
+    if (shortUrl.includes('/_workitems/edit/'))
+      shortUrl = 'http://work.devdiv.io/' + shortUrl.substring(shortUrl.indexOf('/_workitems/edit/') + 17);
+  }
 
   copy(shortUrl);
 
@@ -23,7 +25,7 @@ function onClicked(tab) {
       href = result[0];
       console.log(href);
       if (href)
-          copy('http://work.devdiv.io/' + href.replace("/DevDiv/_workitems/edit/", ""));
+          copy('http://work.devdiv.io/' + href.substring(href.indexOf('/_workitems/edit/') + 17));
     });
 }
 
