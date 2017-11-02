@@ -24,6 +24,15 @@ function onClicked(tab) {
       else
         shortUrl = 'http://build.devdiv.io/' + definitionId[1];
     }
+    if (shortUrl.includes('/_release?') || shortUrl.includes('/_apps/hub/ms.vss-releaseManagement-web.hub-explorer')) {
+      var releaseId = /releaseId=(\d+)/.exec(shortUrl);
+      var definitionId = /definitionId=(\d+)/.exec(shortUrl);
+
+      if (releaseId)
+        shortUrl = 'http://release.devdiv.io/' + releaseId[1];
+      else
+        shortUrl = 'http://release.devdiv.io/' + definitionId[1];
+    }
   }
 
   copy(shortUrl);
