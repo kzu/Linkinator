@@ -15,6 +15,15 @@ function onClicked(tab) {
       shortUrl = 'http://wiki.devdiv.io/' + decodeURIComponent(shortUrl.substring(shortUrl.indexOf('_wiki?pagePath=') + 15));
     if (shortUrl.includes('/_workitems/edit/'))
       shortUrl = 'http://work.devdiv.io/' + shortUrl.substring(shortUrl.indexOf('/_workitems/edit/') + 17);
+    if (shortUrl.includes('/_build/')) {
+      var buildId = /buildId=(\d+)/.exec(shortUrl);
+      var definitionId = /definitionId=(\d+)/.exec(shortUrl);
+
+      if (buildId)
+        shortUrl = 'http://build.devdiv.io/' + buildId[1];
+      else
+        shortUrl = 'http://build.devdiv.io/' + definitionId[1];
+    }
   }
 
   copy(shortUrl);
