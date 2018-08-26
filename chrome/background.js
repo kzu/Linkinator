@@ -11,8 +11,11 @@ function copy(text) {
 function onClicked(tab) {
   var shortUrl = tab.url.toString();
   if (shortUrl.includes('https://devdiv.visualstudio.com/')) {
-    if (shortUrl.includes('_wiki?pagePath='))
-      shortUrl = 'http://wiki.devdiv.io/' + decodeURIComponent(shortUrl.substring(shortUrl.indexOf('_wiki?pagePath=') + 15));
+    if (shortUrl.includes('wiki?pagePath='))
+      shortUrl = 'http://wiki.devdiv.io/' + decodeURIComponent(shortUrl.substring(shortUrl.indexOf('wiki?pagePath=') + 14))
+        .replace(/^\/+/, '')
+        .replace(/\s/g, '-')
+        .replace('&wikiVersion=GBwikiMaster', '');
     if (shortUrl.includes('/_workitems/edit/'))
       shortUrl = 'http://work.devdiv.io/' + shortUrl.substring(shortUrl.indexOf('/_workitems/edit/') + 17);
     if (shortUrl.includes('/_build/')) {

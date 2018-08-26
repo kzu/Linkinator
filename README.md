@@ -10,7 +10,7 @@ Examples of supported URLs:
 | Original URL | Nice URL|
 | ------------ |-------------|
 | https://devdiv.visualstudio.com/DevDiv/_workitems/edit/[WORK_ITEM_ID] | http://work.devdiv.io/WORK_ITEM_ID |
-| https://devdiv.visualstudio.com/DevDiv/_wiki?pagePath=%2FSome%2FSubfolder%2FPage | http://wiki.devdiv.io/Some/Subfolder/Page |
+| https://devdiv.visualstudio.com/DevDiv/_wiki/wikis/DevDiv.wiki?pagePath=%2FSome%2FSubfolder%2FPage | http://wiki.devdiv.io/Some/Subfolder/Page |
 | https://devdiv.visualstudio.com/DevDiv/_build/index?buildId=[BUILD_ID] | http://build.devdiv.io/BUILD_ID |
 | https://devdiv.visualstudio.com/DevDiv/_build/index?definitionId=[DEFINITION_ID]&_a=completed | http://build.devdiv.io/DEFINITION_ID |
 | https://devdiv.visualstudio.com/DevDiv/_release?definitionId=[DEFINITION_ID]&_a=releases | http://release.devdiv.io/DEFINITION_ID |
