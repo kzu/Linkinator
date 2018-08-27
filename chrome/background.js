@@ -31,7 +31,18 @@ function onClicked(tab) {
       var buildId = /id=(\d+)/.exec(shortUrl);
       shortUrl = 'http://build.devdiv.io/' + buildId[1];
     }
+    if (shortUrl.includes('/_releaseDefinition?definitionId')) {
+      // New release pipeline
+      var definitionId = /definitionId=(\d+)/.exec(shortUrl);
+      shortUrl = 'http://release.devdiv.io/' + definitionId[1];
+    }
+    if (shortUrl.includes('/_releaseProgress?releaseId')) {
+      // New release pipeline
+      var releaseId = /releaseId=(\d+)/.exec(shortUrl);
+      shortUrl = 'http://release.devdiv.io/' + releaseId[1];
+    }
     if (shortUrl.includes('/_release?') || shortUrl.includes('/_apps/hub/ms.vss-releaseManagement-web.hub-explorer')) {
+      // Old releases views
       var releaseId = /releaseId=(\d+)/.exec(shortUrl);
       var definitionId = /definitionId=(\d+)/.exec(shortUrl);
 
