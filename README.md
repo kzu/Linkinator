@@ -4,10 +4,12 @@ Provides short nice links for DevDiv's TFS:
 
 ![Screenshot](https://raw.githubusercontent.com/kzu/Linkinator/master/img/screenshot.png)
 
+Just click the button to copy a nice short URL instead of the loooong one for the page you're currently viewing.
+
 Examples of supported URLs:
 
 
-| Original URL | Nice URL|
+| Nice URL | Original URL |
 | ------------ |-------------|
 | http://work.devdiv.io/WORK_ITEM_ID | https://devdiv.visualstudio.com/DevDiv/_workitems/edit/[WORK_ITEM_ID] |
 | http://wiki.devdiv.io/Some/Subfolder/Page | https://devdiv.visualstudio.com/DevDiv/_wiki/wikis/DevDiv.wiki?pagePath=%2FSome%2FSubfolder%2FPage |
@@ -23,3 +25,5 @@ Examples of supported URLs:
 Install from the [Chrome WebStore](https://goo.gl/u5ADhC)
 
 [![Chrome WebStore](https://raw.githubusercontent.com/kzu/Linkinator/master/img/webstore.png)](https://goo.gl/u5ADhC)
+
+The service runs in server-less azure functions that just map back to the original URL via a temporary redirect (307).
