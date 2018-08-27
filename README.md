@@ -14,7 +14,9 @@ Examples of supported URLs:
 | https://devdiv.visualstudio.com/DevDiv/_build/index?buildId=[BUILD_ID] | http://build.devdiv.io/BUILD_ID |
 | https://devdiv.visualstudio.com/DevDiv/_build/index?definitionId=[DEFINITION_ID]&_a=completed | http://build.devdiv.io/DEFINITION_ID |
 | https://devdiv.visualstudio.com/DevDiv/_release?definitionId=[DEFINITION_ID]&_a=releases | http://release.devdiv.io/DEFINITION_ID |
+| https://devdiv.visualstudio.com/DevDiv/_releaseDefinition?definitionId=[DEFINITION_ID]&_a=environments-editor-preview | http://release.devdiv.io/DEFINITION_ID |
 | https://devdiv.visualstudio.com/DevDiv/_release?releaseId=[RELEASE_ID]&_a=release-summary | http://release.devdiv.io/RELEASE_ID |
+| https://devdiv.visualstudio.com/DevDiv/_releaseProgress?releaseId=[RELEASE_ID]&_a=release-pipeline-progress | http://release.devdiv.io/RELEASE_ID |
 | https://devdiv.visualstudio.com/DevDiv/_apps/hub/ms.vss-releaseManagement-web.hub-explorer?definitionId=[DEFINITION_ID]&_a=releases | http://release.devdiv.io/DEFINITION_ID |
 | https://devdiv.visualstudio.com/DevDiv/_apps/hub/ms.vss-releaseManagement-web.hub-explorer?definitionId=[DEFINITION_ID]&_a=release-summary&releaseId=[RELEASE_ID]&source=ReleaseExplorer | http://release.devdiv.io/RELEASE_ID |
 
