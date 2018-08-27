@@ -21,6 +21,7 @@ Examples of supported URLs:
 | http://release.devdiv.io/RELEASE_ID | https://devdiv.visualstudio.com/DevDiv/_releaseProgress?releaseId=[RELEASE_ID]&_a=release-pipeline-progress |
 | http://release.devdiv.io/DEFINITION_ID | https://devdiv.visualstudio.com/DevDiv/_apps/hub/ms.vss-releaseManagement-web.hub-explorer?definitionId=[DEFINITION_ID]&_a=releases |
 | http://release.devdiv.io/RELEASE_ID | https://devdiv.visualstudio.com/DevDiv/_apps/hub/ms.vss-releaseManagement-web.hub-explorer?definitionId=[DEFINITION_ID]&_a=release-summary&releaseId=[RELEASE_ID]&source=ReleaseExplorer |
+| http://feedback.devdiv.io/[ID] | https://developercommunity.visualstudio.com/content/problem/[ID]/[LOOONG-TITLE-WITH-DASHES].html |
 
 Install from the [Chrome WebStore](https://goo.gl/u5ADhC)
 

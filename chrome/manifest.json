@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "DevDiv Linkinator 2000",
   "author": "Daniel Cazzulino",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "background": {
     "scripts": ["background.js"],
     "persistent": false
@@ -10,6 +10,10 @@
   "content_scripts": [
     {
       "matches": ["https://devdiv.visualstudio.com/DevDiv/*"],
+      "js": ["jquery-3.2.1.min.js"]
+    },
+    {
+      "matches": ["https://developercommunity.visualstudio.com/content/problem/*"],
       "js": ["jquery-3.2.1.min.js"]
     }
   ],  

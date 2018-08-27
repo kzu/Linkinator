@@ -51,6 +51,10 @@ function onClicked(tab) {
       else
         shortUrl = 'http://release.devdiv.io/' + definitionId[1];
     }
+  } else if (shortUrl.includes('https://developercommunity.visualstudio.com/content/problem/')) {
+      // New release pipeline
+      var problemId = /problem\/(\d+)\//.exec(shortUrl);
+      shortUrl = 'http://feedback.devdiv.io/' + problemId[1];
   }
 
   copy(shortUrl);
@@ -78,6 +82,16 @@ chrome.runtime.onInstalled.addListener(function() {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: { urlContains: 'devdiv.visualstudio.com' },
+          })
+        ],
+        // And shows the extension's page action.
+        actions: [ new chrome.declarativeContent.ShowPageAction() ]
+      },
+      {
+        // That fires when a page's URL contains 'developercommunity.visualstudio.com' ...
+        conditions: [
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: { urlContains: 'developercommunity.visualstudio.com/content/problem/' },
           })
         ],
         // And shows the extension's page action.
