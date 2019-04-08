@@ -10,14 +10,17 @@ function copy(text) {
 
 function onClicked(tab) {
   var shortUrl = tab.url.toString();
+  console.info('Processing ' + shortUrl);
   if (shortUrl.includes('https://devdiv.visualstudio.com/')) {
     if (shortUrl.includes('wiki?pagePath='))
       shortUrl = 'http://wiki.devdiv.io/' + decodeURIComponent(shortUrl.substring(shortUrl.indexOf('wiki?pagePath=') + 14))
         .replace(/^\/+/, '')
         .replace(/\s/g, '-')
         .replace('&wikiVersion=GBwikiMaster', '');
+
     if (shortUrl.includes('/_workitems/edit/'))
       shortUrl = 'http://work.devdiv.io/' + shortUrl.substring(shortUrl.indexOf('/_workitems/edit/') + 17);
+      
     if (shortUrl.includes('/_build/')) {
       var buildId = /buildId=(\d+)/.exec(shortUrl);
       var definitionId = /definitionId=(\d+)/.exec(shortUrl);
@@ -36,7 +39,7 @@ function onClicked(tab) {
       var definitionId = /definitionId=(\d+)/.exec(shortUrl);
       shortUrl = 'http://release.devdiv.io/' + definitionId[1];
     }
-    if (shortUrl.includes('/_releaseProgress?releaseId')) {
+    if (shortUrl.includes('/_releaseProgress?') && shortUrl.includes('releaseId=')) {
       // New release pipeline
       var releaseId = /releaseId=(\d+)/.exec(shortUrl);
       shortUrl = 'http://release.devdiv.io/' + releaseId[1];
@@ -60,10 +63,10 @@ function onClicked(tab) {
   copy(shortUrl);
 
   chrome.tabs.executeScript(tab.id, {
-      "code": "$('.workitem-dialog a.caption').attr('href');"
+      "code": "if (window.jQuery) { $('.workitem-dialog a.caption').attr('href'); } else { '' }"
     }, function (result) {
       href = result[0];
-      console.log(href);
+      console.info('Copying ' + href);
       if (href)
           copy('http://work.devdiv.io/' + href.substring(href.indexOf('/_workitems/edit/') + 17));
     });
