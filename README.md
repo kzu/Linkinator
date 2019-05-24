@@ -1,4 +1,6 @@
-# Linkinator 2000
+# SUPERSEDED BY https://github.com/kzu/azdo
+
+## Linkinator 2000
 
 Provides short nice links for DevDiv's TFS:
 
